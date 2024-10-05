@@ -320,37 +320,73 @@
 
         <section id="process">
             <h2>AI Development Process & Methodology</h2>
-            <ol>
-                <li>
-                    <h3>Analysis of business objectives</h3>
-                    <p>We deeply research your goals and business processes to draft the solution.</p>
-                </li>
-                <li>
-                    <h3>Data pre-processing</h3>
-                    <p>We analyze and transform your data into a consistent dataset.</p>
-                </li>
-                <li>
-                    <h3>Feature engineering</h3>
-                    <p>We extract and enrich features from raw data sets for better predictive models.</p>
-                </li>
-                <li>
-                    <h3>Building ML models</h3>
-                    <p>We train several machine learning models to determine the most accurate results.</p>
-                </li>
-                <li>
-                    <h3>Deploying ML models</h3>
-                    <p>We integrate the built ML models into your business infrastructure.</p>
-                </li>
-                <li>
-                    <h3>Review and enhancements</h3>
-                    <p>We process user feedback and provide ongoing improvements.</p>
-                </li>
-            </ol>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Analysis of business objectives</h3>
+                        <p>We deeply research your goals and business processes to draft the solution.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Data pre-processing</h3>
+                        <p>We analyze and transform your data into a consistent dataset.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Feature engineering</h3>
+                        <p>We extract and enrich features from raw data sets for better predictive models.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Building ML models</h3>
+                        <p>We train several machine learning models to determine the most accurate results.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Deploying ML models</h3>
+                        <p>We integrate the built ML models into your business infrastructure.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Review and enhancements</h3>
+                        <p>We process user feedback and provide ongoing improvements.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- <footer>
         <p>&copy; 2023 Interstellar AI. All rights reserved.</p>
     </footer> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const steps = document.querySelectorAll('.process-step');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+        });
+    </script>
 </body>
 </html>

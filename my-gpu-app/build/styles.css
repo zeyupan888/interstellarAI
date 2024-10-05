@@ -148,34 +148,110 @@ h2 {
     margin-top: 0;
 }
 
-#process ol {
-    counter-reset: process-counter;
-    list-style-type: none;
-    padding-left: 0;
+#process {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f6f9fc 0%, #eaf0f6 100%);
 }
 
-#process li {
-    counter-increment: process-counter;
-    margin-bottom: 1.5rem;
-    padding-left: 3.5rem;
+#process h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2c3e50;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.process-timeline {
     position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-#process li::before {
-    content: counter(process-counter);
-    background-color: var(--secondary-color);
-    color: white;
-    font-weight: bold;
+.process-timeline::before {
+    content: '';
     position: absolute;
-    left: 0;
     top: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+    left: 50px;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+.process-step {
+    position: relative;
+    margin-bottom: 70px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+}
+
+.process-step.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-number {
+    position: absolute;
+    left: 35px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.step-content {
+    margin-left: 100px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.step-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.step-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.step-content p {
+    color: #34495e;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .process-timeline::before {
+        left: 30px;
+    }
+    
+    .step-number {
+        left: 15px;
+    }
+    
+    .step-content {
+        margin-left: 70px;
+    }
 }
 
 footer {
@@ -259,8 +335,6 @@ footer {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
 }
 
 .gpu-card:hover {
@@ -286,53 +360,43 @@ footer {
     font-size: 1em;
 }
 
-.gpu-model {
-    margin: 0 0 10px 0;
-    color: #333;
-    font-size: 1.2em;
-}
-
 .gpu-specs {
     list-style-type: none;
     padding: 0;
-    margin: 0 0 10px 0;
 }
 
 .gpu-specs li {
     margin-bottom: 5px;
+}
+
+.gpu-pricing {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.gpu-pricing .price {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.gpu-pricing .cloud-type {
     font-size: 0.9em;
     color: #666;
 }
 
-.gpu-pricing {
-    margin-top: auto;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
+.gpu-pricing .cloud-type:nth-child(2) {
+    color: #4a90e2; /* Secure Cloud color */
 }
 
-.gpu-pricing .price {
-    font-weight: bold;
-    color: #4a90e2;
-    margin-bottom: 5px;
+.gpu-pricing .cloud-type:nth-child(3) {
+    color: #f5a623; /* Community Cloud color */
 }
 
-.gpu-pricing .cloud-type {
-    font-size: 0.85em;
-    margin: 2px 0;
+.amd {
+    border-top: 3px solid #ED1C24;
 }
 
-.gpu-pricing .cloud-type.secure {
-    color: #4a90e2;
-}
-
-.gpu-pricing .cloud-type.community {
-    color: #f5a623;
-}
-
-.nvidia .gpu-brand {
-    color: #76b900;
-}
-
-.amd .gpu-brand {
-    color: #ed1c24;
+.nvidia {
+    border-top: 3px solid #76B900;
 }
