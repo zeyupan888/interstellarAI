@@ -8,7 +8,12 @@
      deploy:
        runs-on: ubuntu-latest
        steps:
-         - uses: actions/checkout@v3
+         - name: Checkout repository
+           uses: actions/checkout@v3
+         - name: List repository contents
+           run: |
+             echo "Repository contents:"
+             ls -R
          - name: Deploy to GitHub Pages
            uses: actions/upload-pages-artifact@v1
            with:
