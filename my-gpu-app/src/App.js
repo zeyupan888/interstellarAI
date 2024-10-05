@@ -1,10 +1,16 @@
 import React from 'react';
-import Dashboard from './components/Dashboard';
+import Chatbox from './components/Chatbox';
+import './App.css';
 
 function App() {
+  console.log('App component rendered');
   return (
     <div className="App">
-      <Dashboard />
+      {/* ... other components ... */}
+      <section id="chat">
+        <h2>AI Chat Assistant</h2>
+        <Chatbox />
+      </section>
     </div>
   );
 }
