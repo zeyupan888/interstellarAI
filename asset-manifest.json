@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/interstellarAI/static/css/main.46d60561.css",
+    "main.js": "/interstellarAI/static/js/main.c8253bc3.js",
+    "static/js/453.e1c7764d.chunk.js": "/interstellarAI/static/js/453.e1c7764d.chunk.js",
+    "index.html": "/interstellarAI/index.html",
+    "main.46d60561.css.map": "/interstellarAI/static/css/main.46d60561.css.map",
+    "main.c8253bc3.js.map": "/interstellarAI/static/js/main.c8253bc3.js.map",
+    "453.e1c7764d.chunk.js.map": "/interstellarAI/static/js/453.e1c7764d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46d60561.css",
+    "static/js/main.c8253bc3.js"
+  ]
+}
