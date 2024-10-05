@@ -9,7 +9,6 @@ function Chatbox() {
   const sendingRef = useRef(false);
 
   console.log('Chatbox component rendered');
-  console.log('API Key:', process.env.REACT_APP_OPENAI_API_KEY);
 
   const sendMessage = async () => {
     if (input.trim() === '' || isLoading || sendingRef.current) return;
