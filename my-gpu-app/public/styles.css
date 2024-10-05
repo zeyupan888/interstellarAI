@@ -400,3 +400,78 @@ footer {
 .nvidia {
     border-top: 3px solid #76B900;
 }
+
+#demo {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+#demo h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.demo-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.demo-description, .demo-videos {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.demo-description h3, .demo-videos h3 {
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.demo-description p {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.demo-process {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demo-process li {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tiktok-video-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-height: 400px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tiktok-video-container {
+        min-height: 300px; /* Adjust for mobile */
+    }
+}
