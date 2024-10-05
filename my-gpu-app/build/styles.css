@@ -1,0 +1,338 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg-color: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 4rem;
+}
+
+#hero h1, #hero p {
+    color: white;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(245, 166, 35, 0.8));
+    z-index: -1;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #e09400;
+    transform: translateY(-2px);
+}
+
+.service, .industry {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover, .industry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service h3, .industry h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+#process ol {
+    counter-reset: process-counter;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#process li {
+    counter-increment: process-counter;
+    margin-bottom: 1.5rem;
+    padding-left: 3.5rem;
+    position: relative;
+}
+
+#process li::before {
+    content: counter(process-counter);
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .service, .industry {
+        display: inline-block;
+        width: calc(50% - 1rem);
+        vertical-align: top;
+    }
+
+    .service:nth-child(odd), .industry:nth-child(odd) {
+        margin-right: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service, .industry {
+        width: calc(33.33% - 1rem);
+    }
+
+    .service:not(:nth-child(3n)), .industry:not(:nth-child(3n)) {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem;
+    }
+}
+
+#gpu-cloud h2,
+#ai-consulting h2 {
+    padding-top: 2rem; /* Adjust this value to move the text further down */
+    margin-bottom: 1.5rem; /* This ensures some space between the heading and the content below */
+}
+
+#gpu-cloud,
+#ai-consulting {
+    padding-top: 3rem; /* Adjust this value as needed */
+}
+
+#gpu-cloud {
+    padding: 4rem 2rem;
+}
+
+#gpu-cloud .section-intro {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.gpu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gpu-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gpu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.gpu-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.gpu-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.gpu-brand {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.gpu-model {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.gpu-specs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.gpu-specs li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.gpu-pricing {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.gpu-pricing .price {
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 5px;
+}
+
+.gpu-pricing .cloud-type {
+    font-size: 0.85em;
+    margin: 2px 0;
+}
+
+.gpu-pricing .cloud-type.secure {
+    color: #4a90e2;
+}
+
+.gpu-pricing .cloud-type.community {
+    color: #f5a623;
+}
+
+.nvidia .gpu-brand {
+    color: #76b900;
+}
+
+.amd .gpu-brand {
+    color: #ed1c24;
+}
