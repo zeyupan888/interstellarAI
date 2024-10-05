@@ -1,0 +1,25 @@
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .gpu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .gpu-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .gpu-item.available {
+    background-color: #e6ffe6;
+  }
+
+  .gpu-item.in-use {
+    background-color: #ffe6e6;
+  }
